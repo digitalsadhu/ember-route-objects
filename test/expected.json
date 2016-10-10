@@ -3,33 +3,39 @@
     "name": "tmp",
     "path": "/tmps/:tmp_id",
     "method": "get",
+    "resetNamespace": false,
     "children": [
       {
         "name": "view",
         "path": "/",
         "method": "get",
+        "resetNamespace": false,
         "children": []
       },
       {
         "name": "layouts",
         "path": "/layouts",
         "method": "get",
+        "resetNamespace": false,
         "children": [
           {
             "name": "edit",
             "path": "/:layout_id/edit",
             "method": "get",
+            "resetNamespace": false,
             "children": [
               {
                 "name": "details",
                 "path": "/",
                 "method": "get",
+                "resetNamespace": false,
                 "children": []
               },
               {
                 "name": "map",
                 "path": "/map",
                 "method": "get",
+                "resetNamespace": false,
                 "children": []
               }
             ]
@@ -38,17 +44,20 @@
             "name": "create",
             "path": "/create",
             "method": "get",
+            "resetNamespace": false,
             "children": [
               {
                 "name": "details",
                 "path": "/",
                 "method": "get",
+                "resetNamespace": false,
                 "children": []
               },
               {
                 "name": "map",
                 "path": "/map",
                 "method": "get",
+                "resetNamespace": false,
                 "children": []
               }
             ]
@@ -57,22 +66,26 @@
             "name": "view",
             "path": "/:layout_id",
             "method": "get",
+            "resetNamespace": false,
             "children": [
               {
                 "name": "deployments",
                 "path": "/deployments",
                 "method": "get",
+                "resetNamespace": false,
                 "children": [
                   {
                     "name": "create",
                     "path": "/create",
                     "method": "get",
+                    "resetNamespace": false,
                     "children": []
                   },
                   {
                     "name": "edit",
                     "path": "/:deployment_id/edit",
                     "method": "get",
+                    "resetNamespace": false,
                     "children": []
                   }
                 ]

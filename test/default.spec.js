@@ -15,11 +15,13 @@ describe('Ember Route Objects', function () {
         name: 'home',
         path: '/home',
         method: 'get',
+        resetNamespace: false,
         children: [
           {
             name: 'away',
             path: '/away',
             method: 'get',
+            resetNamespace: false,
             children: []
           }
         ]
@@ -40,11 +42,13 @@ describe('Ember Route Objects', function () {
         name: 'home',
         path: '/homes',
         method: 'patch',
+        resetNamespace: false,
         children: [
           {
             name: 'away',
             path: '/aways',
             method: 'post',
+            resetNamespace: false,
             children: []
           }
         ]
@@ -90,6 +94,7 @@ describe('Ember Route Objects', function () {
         name: 'home',
         path: '/home',
         method: 'get',
+        resetNamespace: false,
         children: []
       }
     ]
@@ -106,6 +111,7 @@ describe('Ember Route Objects', function () {
         name: 'home',
         path: '/home',
         method: 'get',
+        resetNamespace: false,
         children: []
       }
     ]
@@ -122,6 +128,7 @@ describe('Ember Route Objects', function () {
         name: 'home',
         path: '/home',
         method: 'get',
+        resetNamespace: false,
         children: []
       }
     ]
@@ -146,5 +153,22 @@ describe('Ember Route Objects', function () {
     }
 
     assert.throws(act, /Invalid number of arguments to this.route/)
+  })
+
+  it('resetNamespace', function () {
+    const actual = ro(function () {
+      this.route('home', {resetNamespace: true})
+    })
+
+    const expected = [
+      {
+        name: 'home',
+        path: '/home',
+        method: 'get',
+        resetNamespace: true,
+        children: []
+      }
+    ]
+    assert.deepEqual(actual, expected)
   })
 })

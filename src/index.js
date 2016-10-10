@@ -14,6 +14,7 @@ module.exports = function mapRouteFunctionToObjects (routeDefinitionFunction) {
         name,
         path: options.path || `/${name}`,
         method: options.method || 'get',
+        resetNamespace: options.resetNamespace || false,
         children: []
       }
       routeDefinitionObjects.push(routeDefinitionObject)
