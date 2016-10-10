@@ -1,0 +1,86 @@
+[
+  {
+    "name": "tmp",
+    "path": "/tmps/:tmp_id",
+    "method": "get",
+    "children": [
+      {
+        "name": "view",
+        "path": "/",
+        "method": "get",
+        "children": []
+      },
+      {
+        "name": "layouts",
+        "path": "/",
+        "method": "get",
+        "children": [
+          {
+            "name": "edit",
+            "path": "/:layout_id/edit",
+            "method": "get",
+            "children": [
+              {
+                "name": "details",
+                "path": "/",
+                "method": "get",
+                "children": []
+              },
+              {
+                "name": "map",
+                "path": "/",
+                "method": "get",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "create",
+            "path": "/create",
+            "method": "get",
+            "children": [
+              {
+                "name": "details",
+                "path": "/",
+                "method": "get",
+                "children": []
+              },
+              {
+                "name": "map",
+                "path": "/",
+                "method": "get",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "view",
+            "path": "/:layout_id",
+            "method": "get",
+            "children": [
+              {
+                "name": "deployments",
+                "path": "/",
+                "method": "get",
+                "children": [
+                  {
+                    "name": "create",
+                    "path": "/",
+                    "method": "get",
+                    "children": []
+                  },
+                  {
+                    "name": "edit",
+                    "path": "/:deployment_id/edit",
+                    "method": "get",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
