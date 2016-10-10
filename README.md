@@ -15,7 +15,6 @@
 <span class="badge-npmversion"><a href="https://npmjs.org/package/ember-route-objects" title="View this project on NPM"><img src="https://img.shields.io/npm/v/ember-route-objects.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/ember-route-objects" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/ember-route-objects.svg" alt="NPM downloads" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/digitalsadhu/ember-route-objects" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/digitalsadhu/ember-route-objects.svg" alt="Dependency Status" /></a></span>
-<span class="badge-daviddmdev"><a href="https://david-dm.org/digitalsadhu/ember-route-objects#info=devDependencies" title="View the status of this project's development dependencies on DavidDM"><img src="https://img.shields.io/david/dev/digitalsadhu/ember-route-objects.svg" alt="Dev Dependency Status" /></a></span>
 
 <!-- /BADGES -->
 
@@ -111,8 +110,8 @@ And get back a definition object.
 #### Further reading
 
 For additional documentation on how to define ember router route definitions please refer to:
-- (Ember router documentation)[https://guides.emberjs.com/v2.8.0/routing/defining-your-routes/]
-- (Router's map method API documentation)[http://emberjs.com/api/classes/Ember.Router.html#method_map]
+- [Ember router documentation](https://guides.emberjs.com/v2.8.0/routing/defining-your-routes/)
+- [Router's map method API documentation](http://emberjs.com/api/classes/Ember.Router.html#method_map)
 
 <!-- HISTORY/ -->
 
@@ -145,7 +144,9 @@ Become a sponsor!
 
 <h3>Contributors</h3>
 
-No contributors yet! Will you be the first?
+These amazing people have contributed code to this project:
+
+<ul><li><a href="http://lovebeer.nz/">Richard Walker</a> — <a href="https://github.com/digitalsadhu/ember-route-objects/commits?author=digitalsadhu" title="View the GitHub contributions of Richard Walker on repository digitalsadhu/ember-route-objects">view contributions</a></li></ul>
 
 
 
@@ -158,7 +159,7 @@ No contributors yet! Will you be the first?
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; <a href="http://github.com/digitalsadhu/ember-route-objects">Richard Walker</a></li></ul>
+<ul><li>Copyright &copy; <a href="http://lovebeer.nz/">Richard Walker</a></li></ul>
 
 and licensed under:
 
