@@ -171,4 +171,49 @@ describe('Ember Route Objects', function () {
     ]
     assert.deepEqual(actual, expected)
   })
+
+  it('methods can only be suported http verbs: get', function () {
+    const actual = ro(function () { this.route('home', {method: 'get'}) })
+    assert.strictEqual(actual[0].method, 'get')
+  })
+
+  it('methods can only be suported http verbs: put', function () {
+    const actual = ro(function () { this.route('home', {method: 'put'}) })
+    assert.strictEqual(actual[0].method, 'put')
+  })
+
+  it('methods can only be suported http verbs: post', function () {
+    const actual = ro(function () { this.route('home', {method: 'post'}) })
+    assert.strictEqual(actual[0].method, 'post')
+  })
+
+  it('methods can only be suported http verbs: patch', function () {
+    const actual = ro(function () { this.route('home', {method: 'patch'}) })
+    assert.strictEqual(actual[0].method, 'patch')
+  })
+
+  it('methods can only be suported http verbs: delete', function () {
+    const actual = ro(function () { this.route('home', {method: 'delete'}) })
+    assert.strictEqual(actual[0].method, 'delete')
+  })
+
+  it('invalid http verbs 1', function () {
+    const act = () => { ro(function () { this.route('home', {method: 'sad'}) }) }
+    assert.throws(act, /Invalid http verb given to `method` option/)
+  })
+
+  it('invalid http verbs 2', function () {
+    const act = () => { ro(function () { this.route('home', {method: ''}) }) }
+    assert.throws(act, /Invalid http verb given to `method` option/)
+  })
+
+  it('invalid http verbs 3', function () {
+    const act = () => { ro(function () { this.route('home', {method: null}) }) }
+    assert.throws(act, /Invalid http verb given to `method` option/)
+  })
+
+  it('name must be a string', function () {
+    const act = () => { ro(function () { this.route(101) }) }
+    assert.throws(act, /name argument must be a string/)
+  })
 })
