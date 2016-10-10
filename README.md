@@ -39,7 +39,80 @@ Parses ember router definitions into a nested object structure
 
 
 ## Usage
-Usage instructions go here
+First require the route objects function that will be used to parse an ember js style
+router defintion function.
+
+```js
+const ro = require('ember-route-objects')
+```
+
+Then pass route objects an ember router definition function.
+
+```js
+const routeObjects = ro(function () {
+  this.route('users')
+  this.route('posts', function () {
+    this.route('view', {path: '/:post_id'})
+    this.route('list', {path: '/'})
+    this.route('create', {method: 'post', path: '/'})
+  })
+})
+```
+
+And get back a definition object.
+
+```js
+[
+  {
+    name: 'users',
+    path: '/users',
+    method: 'get',
+    resetNamespace: false,
+    children: []
+  },
+  {
+    name: 'posts',
+    path: '/posts',
+    method: 'get',
+    resetNamespace: false,
+    children: [
+      {
+        name: 'view',
+        path: '/view',
+        method: 'get',
+        resetNamespace: false,
+        children: []
+      },
+      {
+        name: 'list',
+        path: '/',
+        method: 'get',
+        resetNamespace: false,
+        children: []
+      },
+      {
+        name: 'create',
+        path: '/',
+        method: 'post',
+        resetNamespace: false,
+        children: []
+      },
+    ]
+  }
+]
+```
+
+### Additional
+
+#### Note
+
+- An additional option `method` is supported which should be specified as an http verb. `get|put|patch|post|delete`
+
+#### Further reading
+
+For additional documentation on how to define ember router route definitions please refer to:
+- (Ember router documentation)[https://guides.emberjs.com/v2.8.0/routing/defining-your-routes/]
+- (Router's map method API documentation)[http://emberjs.com/api/classes/Ember.Router.html#method_map]
 
 <!-- HISTORY/ -->
 
