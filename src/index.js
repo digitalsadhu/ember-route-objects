@@ -12,7 +12,7 @@ module.exports = function mapRouteFunctionToObjects (routeDefinitionFunction) {
       if (!options && !callback) options = {}
       const routeDefinitionObject = {
         name,
-        path: options.path || '/',
+        path: options.path || `/${name}`,
         method: options.method || 'get',
         children: []
       }

@@ -13,12 +13,12 @@ describe('Ember Route Objects', function () {
     const expected = [
       {
         name: 'home',
-        path: '/',
+        path: '/home',
         method: 'get',
         children: [
           {
             name: 'away',
-            path: '/',
+            path: '/away',
             method: 'get',
             children: []
           }
@@ -30,20 +30,20 @@ describe('Ember Route Objects', function () {
 
   it('basic router definition parsing with options', function () {
     const actual = ro(function () {
-      this.route('home', {path: '/home', method: 'patch'}, function () {
-        this.route('away', {path: '/away', method: 'post'})
+      this.route('home', {path: '/homes', method: 'patch'}, function () {
+        this.route('away', {path: '/aways', method: 'post'})
       })
     })
 
     const expected = [
       {
         name: 'home',
-        path: '/home',
+        path: '/homes',
         method: 'patch',
         children: [
           {
             name: 'away',
-            path: '/away',
+            path: '/aways',
             method: 'post',
             children: []
           }
@@ -88,7 +88,7 @@ describe('Ember Route Objects', function () {
     const expected = [
       {
         name: 'home',
-        path: '/',
+        path: '/home',
         method: 'get',
         children: []
       }
@@ -104,7 +104,7 @@ describe('Ember Route Objects', function () {
     const expected = [
       {
         name: 'home',
-        path: '/',
+        path: '/home',
         method: 'get',
         children: []
       }
@@ -120,7 +120,7 @@ describe('Ember Route Objects', function () {
     const expected = [
       {
         name: 'home',
-        path: '/',
+        path: '/home',
         method: 'get',
         children: []
       }

@@ -12,7 +12,7 @@
       },
       {
         "name": "layouts",
-        "path": "/",
+        "path": "/layouts",
         "method": "get",
         "children": [
           {
@@ -28,7 +28,7 @@
               },
               {
                 "name": "map",
-                "path": "/",
+                "path": "/map",
                 "method": "get",
                 "children": []
               }
@@ -47,7 +47,7 @@
               },
               {
                 "name": "map",
-                "path": "/",
+                "path": "/map",
                 "method": "get",
                 "children": []
               }
@@ -60,12 +60,12 @@
             "children": [
               {
                 "name": "deployments",
-                "path": "/",
+                "path": "/deployments",
                 "method": "get",
                 "children": [
                   {
                     "name": "create",
-                    "path": "/",
+                    "path": "/create",
                     "method": "get",
                     "children": []
                   },
