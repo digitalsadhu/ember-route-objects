@@ -79,4 +79,72 @@ describe('Ember Route Objects', function () {
     const expected = require('./expected.json')
     assert.deepEqual(actual, expected)
   })
+
+  it('empty options object', function () {
+    const actual = ro(function () {
+      this.route('home', {})
+    })
+
+    const expected = [
+      {
+        name: 'home',
+        path: '/',
+        method: 'get',
+        children: []
+      }
+    ]
+    assert.deepEqual(actual, expected)
+  })
+
+  it('null options object', function () {
+    const actual = ro(function () {
+      this.route('home', null)
+    })
+
+    const expected = [
+      {
+        name: 'home',
+        path: '/',
+        method: 'get',
+        children: []
+      }
+    ]
+    assert.deepEqual(actual, expected)
+  })
+
+  it('no options object, no nested routes', function () {
+    const actual = ro(function () {
+      this.route('home')
+    })
+
+    const expected = [
+      {
+        name: 'home',
+        path: '/',
+        method: 'get',
+        children: []
+      }
+    ]
+    assert.deepEqual(actual, expected)
+  })
+
+  it('too few arguments', function () {
+    const act = () => {
+      ro(function () {
+        this.route()
+      })
+    }
+
+    assert.throws(act, /Invalid number of arguments to this.route/)
+  })
+
+  it('too many arguments', function () {
+    const act = () => {
+      ro(function () {
+        this.route('home', {}, {}, {})
+      })
+    }
+
+    assert.throws(act, /Invalid number of arguments to this.route/)
+  })
 })
