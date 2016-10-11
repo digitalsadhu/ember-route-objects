@@ -12,11 +12,25 @@ describe('Ember Route Objects', function () {
 
     const expected = [
       {
+        name: 'index',
+        path: '/',
+        method: 'get',
+        resetNamespace: false,
+        children: []
+      },
+      {
         name: 'home',
         path: '/home',
         method: 'get',
         resetNamespace: false,
         children: [
+          {
+            name: 'index',
+            path: '/',
+            method: 'get',
+            resetNamespace: false,
+            children: []
+          },
           {
             name: 'away',
             path: '/away',
@@ -39,11 +53,25 @@ describe('Ember Route Objects', function () {
 
     const expected = [
       {
+        name: 'index',
+        path: '/',
+        method: 'patch',
+        resetNamespace: false,
+        children: []
+      },
+      {
         name: 'home',
         path: '/homes',
         method: 'patch',
         resetNamespace: false,
         children: [
+          {
+            name: 'index',
+            path: '/',
+            method: 'post',
+            resetNamespace: false,
+            children: []
+          },
           {
             name: 'away',
             path: '/aways',
@@ -91,6 +119,13 @@ describe('Ember Route Objects', function () {
 
     const expected = [
       {
+        name: 'index',
+        path: '/',
+        method: 'get',
+        resetNamespace: false,
+        children: []
+      },
+      {
         name: 'home',
         path: '/home',
         method: 'get',
@@ -108,6 +143,13 @@ describe('Ember Route Objects', function () {
 
     const expected = [
       {
+        name: 'index',
+        path: '/',
+        method: 'get',
+        resetNamespace: false,
+        children: []
+      },
+      {
         name: 'home',
         path: '/home',
         method: 'get',
@@ -124,6 +166,13 @@ describe('Ember Route Objects', function () {
     })
 
     const expected = [
+      {
+        name: 'index',
+        path: '/',
+        method: 'get',
+        resetNamespace: false,
+        children: []
+      },
       {
         name: 'home',
         path: '/home',
@@ -162,6 +211,13 @@ describe('Ember Route Objects', function () {
 
     const expected = [
       {
+        name: 'index',
+        path: '/',
+        method: 'get',
+        resetNamespace: true,
+        children: []
+      },
+      {
         name: 'home',
         path: '/home',
         method: 'get',
@@ -174,27 +230,27 @@ describe('Ember Route Objects', function () {
 
   it('methods can only be suported http verbs: get', function () {
     const actual = ro(function () { this.route('home', {method: 'get'}) })
-    assert.strictEqual(actual[0].method, 'get')
+    assert.strictEqual(actual[1].method, 'get')
   })
 
   it('methods can only be suported http verbs: put', function () {
     const actual = ro(function () { this.route('home', {method: 'put'}) })
-    assert.strictEqual(actual[0].method, 'put')
+    assert.strictEqual(actual[1].method, 'put')
   })
 
   it('methods can only be suported http verbs: post', function () {
     const actual = ro(function () { this.route('home', {method: 'post'}) })
-    assert.strictEqual(actual[0].method, 'post')
+    assert.strictEqual(actual[1].method, 'post')
   })
 
   it('methods can only be suported http verbs: patch', function () {
     const actual = ro(function () { this.route('home', {method: 'patch'}) })
-    assert.strictEqual(actual[0].method, 'patch')
+    assert.strictEqual(actual[1].method, 'patch')
   })
 
   it('methods can only be suported http verbs: delete', function () {
     const actual = ro(function () { this.route('home', {method: 'delete'}) })
-    assert.strictEqual(actual[0].method, 'delete')
+    assert.strictEqual(actual[1].method, 'delete')
   })
 
   it('invalid http verbs 1', function () {

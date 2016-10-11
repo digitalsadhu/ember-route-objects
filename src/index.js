@@ -4,6 +4,7 @@ const assert = require('assert')
 
 module.exports = function mapRouteFunctionToObjects (routeDefinitionFunction) {
   const routeDefinitionObjects = []
+  let indexCreated = false
   const context = {
     route (name, options, callback) {
       const args = Array.from(arguments)
@@ -24,6 +25,16 @@ module.exports = function mapRouteFunctionToObjects (routeDefinitionFunction) {
       }
       if (typeof options === 'function') callback = options
       if (!options && !callback) options = {}
+      if (!indexCreated) {
+        routeDefinitionObjects.push({
+          name: 'index',
+          path: '/',
+          method: options.method || 'get',
+          resetNamespace: options.resetNamespace || false,
+          children: []
+        })
+        indexCreated = true
+      }
       const routeDefinitionObject = {
         name,
         path: options.path || `/${name}`,

@@ -1,10 +1,24 @@
 [
   {
+    "name": "index",
+    "path": "/",
+    "method": "get",
+    "resetNamespace": false,
+    "children": []
+  },
+  {
     "name": "tmp",
     "path": "/tmps/:tmp_id",
     "method": "get",
     "resetNamespace": false,
     "children": [
+      {
+        "name": "index",
+        "path": "/",
+        "method": "get",
+        "resetNamespace": false,
+        "children": []
+      },
       {
         "name": "view",
         "path": "/",
@@ -19,11 +33,25 @@
         "resetNamespace": false,
         "children": [
           {
+            "name": "index",
+            "path": "/",
+            "method": "get",
+            "resetNamespace": false,
+            "children": []
+          },
+          {
             "name": "edit",
             "path": "/:layout_id/edit",
             "method": "get",
             "resetNamespace": false,
             "children": [
+              {
+                "name": "index",
+                "path": "/",
+                "method": "get",
+                "resetNamespace": false,
+                "children": []
+              },
               {
                 "name": "details",
                 "path": "/",
@@ -47,6 +75,13 @@
             "resetNamespace": false,
             "children": [
               {
+                "name": "index",
+                "path": "/",
+                "method": "get",
+                "resetNamespace": false,
+                "children": []
+              },
+              {
                 "name": "details",
                 "path": "/",
                 "method": "get",
@@ -69,11 +104,25 @@
             "resetNamespace": false,
             "children": [
               {
+                "name": "index",
+                "path": "/",
+                "method": "get",
+                "resetNamespace": false,
+                "children": []
+              },
+              {
                 "name": "deployments",
                 "path": "/deployments",
                 "method": "get",
                 "resetNamespace": false,
                 "children": [
+                  {
+                    "name": "index",
+                    "path": "/",
+                    "method": "get",
+                    "resetNamespace": false,
+                    "children": []
+                  },
                   {
                     "name": "create",
                     "path": "/create",
